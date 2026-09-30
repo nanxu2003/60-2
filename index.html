@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JP HOLDINGS LIMITED | 智慧供應鏈 效率新典範</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0e3e3a',      // 深青綠
+                            deep: '#072b28',
+                            primary: '#0f766e',
+                            teal: '#14b8a6',
+                            aqua: '#2dd4bf',
+                            light: '#f0faf9'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Noto Serif TC"', 'serif'],
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .font-serif { font-family: 'Noto Serif TC', serif; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .glass-nav {
+            background: rgba(7, 43, 40, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(45, 212, 191, 0.2);
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(7, 43, 40, 0.82), rgba(7, 43, 40, 0.6)), url('https://picsum.photos/id/431/1920/1080');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(15, 118, 110, 0.25);
+        }
+
+        .grid-bg {
+            background-image: linear-gradient(rgba(7, 43, 40, 0.95), rgba(7, 43, 40, 0.9)),
+                linear-gradient(rgba(45, 212, 191, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(45, 212, 191, 0.15) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-slate-700 antialiased overflow-x-hidden">
+
+    <!-- 頂部公告 -->
+    <div class="bg-brand-deep text-teal-200 text-xs py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <span><i class="fas fa-microchip mr-2"></i>全新智能倉儲系統上線：實時庫存可見度提升 99.5%。</span>
+            <span class="hidden md:block">供應鏈諮詢熱線：78298865</span>
+        </div>
+    </div>
+
+    <!-- 導航 -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-5">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 bg-gradient-to-br from-brand-primary to-brand-aqua rounded-xl flex items-center justify-center text-white text-xl shadow-lg">
+                    <i class="fas fa-diagram-project"></i>
+                </div>
+                <div class="text-white">
+                    <h1 class="font-bold text-lg leading-tight">JP HOLDINGS</h1>
+                    <p class="text-[10px] tracking-[0.3em] text-teal-300 uppercase">Supply Chain</p>
+                </div>
+            </div>
+
+            <div class="hidden md:flex space-x-8 text-white text-sm font-medium">
+                <a href="#home" class="hover:text-teal-300 transition">首頁</a>
+                <a href="#about" class="hover:text-teal-300 transition">關於我們</a>
+                <a href="#services" class="hover:text-teal-300 transition">解決方案</a>
+                <a href="#platform" class="hover:text-teal-300 transition">智能平台</a>
+                <a href="#faq" class="hover:text-teal-300 transition">常見問題</a>
+                <a href="#contact" class="hover:text-teal-300 transition">聯絡我們</a>
+            </div>
+
+            <a href="#contact" class="hidden md:inline-block px-6 py-2.5 bg-brand-aqua text-brand-deep font-bold rounded-full hover:bg-white transition duration-300 text-sm shadow-lg shadow-teal-500/30">
+                免費諮詢
+            </a>
+
+            <button class="md:hidden text-white text-2xl"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header id="home" class="hero-bg h-screen flex items-center relative overflow-hidden">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center mt-16">
+            <div class="text-white">
+                <span class="inline-block py-1 px-4 bg-brand-aqua/15 border border-brand-aqua/50 rounded-full text-brand-aqua text-sm mb-6 tracking-widest reveal">SMART SUPPLY CHAIN</span>
+                <h2 class="font-serif text-4xl md:text-6xl font-bold mb-6 leading-tight reveal" style="transition-delay: 100ms;">
+                    讓每一件貨物<br><span class="text-brand-aqua">都在掌控之中</span>
+                </h2>
+                <p class="text-lg text-gray-200 mb-10 leading-relaxed reveal" style="transition-delay: 200ms;">
+                    JP HOLDINGS LIMITED 提供從採購、倉儲到最後一哩配送的全鏈條供應鏈管理服務，以數據驅動決策，以系統保障時效。
+                </p>
+                <div class="flex flex-col md:flex-row gap-4 reveal" style="transition-delay: 300ms;">
+                    <a href="#services" class="px-8 py-4 bg-brand-aqua text-brand-deep font-bold rounded-lg hover:bg-white transition shadow-lg shadow-teal-500/30">
+                        查看解決方案 <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#contact" class="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg font-bold hover:bg-white/20 transition">
+                        預約評估
+                    </a>
+                </div>
+            </div>
+            <div class="hidden md:block reveal" style="transition-delay: 200ms;">
+                <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 shadow-2xl">
+                    <div class="flex justify-between items-center mb-6">
+                        <h4 class="font-bold text-white"><i class="fas fa-chart-line text-brand-aqua mr-2"></i>供應鏈儀表板</h4>
+                        <span class="text-xs text-teal-300 px-3 py-1 bg-brand-aqua/10 rounded-full">即時數據</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-xs text-gray-100 mb-2"><span>準時交付率</span><span class="text-brand-aqua font-bold">98.2%</span></div>
+                            <div class="h-2 bg-white/15 rounded-full overflow-hidden"><div class="h-full w-[98%] bg-gradient-to-r from-brand-primary to-brand-aqua rounded-full"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs text-gray-100 mb-2"><span>庫存周轉天數</span><span class="text-brand-aqua font-bold">21 天</span></div>
+                            <div class="h-2 bg-white/15 rounded-full overflow-hidden"><div class="h-full w-[75%] bg-gradient-to-r from-brand-primary to-brand-aqua rounded-full"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs text-gray-100 mb-2"><span>運輸成本節省</span><span class="text-brand-aqua font-bold">18%</span></div>
+                            <div class="h-2 bg-white/15 rounded-full overflow-hidden"><div class="h-full w-[65%] bg-gradient-to-r from-brand-primary to-brand-aqua rounded-full"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs text-gray-100 mb-2"><span>異常處理時效</span><span class="text-brand-aqua font-bold">30 分鐘</span></div>
+                            <div class="h-2 bg-white/15 rounded-full overflow-hidden"><div class="h-full w-[85%] bg-gradient-to-r from-brand-primary to-brand-aqua rounded-full"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white/50">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </header>
+
+    <!-- 數據統計 -->
+    <section class="py-10 bg-white relative -mt-10 z-20 shadow-xl rounded-t-3xl mx-4 md:mx-10">
+        <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div class="reveal">
+                <div class="font-serif text-4xl font-bold text-brand-primary mb-2 counter" data-target="300">0</div>
+                <div class="text-gray-500 text-sm">服務企業客戶</div>
+            </div>
+            <div class="reveal" style="transition-delay: 100ms;">
+                <div class="font-serif text-4xl font-bold text-brand-teal mb-2 counter" data-target="120">0</div>
+                <div class="text-gray-500 text-sm">萬件日處理能力</div>
+            </div>
+            <div class="reveal" style="transition-delay: 200ms;">
+                <div class="font-serif text-4xl font-bold text-brand-primary mb-2 counter" data-target="15">0</div>
+                <div class="text-gray-500 text-sm">個倉儲網絡節點</div>
+            </div>
+            <div class="reveal" style="transition-delay: 300ms;">
+                <div class="font-serif text-4xl font-bold text-brand-teal mb-2 counter" data-target="99">0</div>
+                <div class="text-gray-500 text-sm">系統可用性 (%)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 關於我們 -->
+    <section id="about" class="py-20 bg-brand-light">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 relative reveal">
+                    <img src="https://picsum.photos/id/113/800/600" alt="智能倉庫" class="rounded-2xl shadow-2xl z-10 relative">
+                    <div class="absolute -bottom-8 -right-8 bg-brand-primary text-white px-8 py-6 rounded-2xl shadow-xl">
+                        <p class="font-bold text-3xl">10+</p>
+                        <p class="text-sm text-teal-100">年供應鏈深耕經驗</p>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 reveal">
+                    <h3 class="text-brand-teal font-bold tracking-[0.3em] uppercase mb-3">關於JP HOLDINGS LIMITED</h3>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-dark mb-6 leading-snug">供應鏈的每一個環節，<br>我們都精益求精</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        JP HOLDINGS LIMITED 是一間專注於供應鏈管理及物流科技的香港企業，總部位於 Rm 931 CAREER AND KENSON INDL MANSION 58 HUNG TO RD，服務網絡覆蓋亞洲主要經濟體。
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        我們將資訊科技與營運經驗深度融合，自主研發倉儲管理系統（WMS）及運輸管理系統（TMS），為客戶提供透明、高效、可量化的供應鏈體驗。
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center"><i class="fas fa-check-circle text-brand-teal mr-2"></i> ISO 9001 認證</div>
+                        <div class="flex items-center"><i class="fas fa-check-circle text-brand-teal mr-2"></i> 香港物流協會成員</div>
+                        <div class="flex items-center"><i class="fas fa-check-circle text-brand-teal mr-2"></i> 雙語客戶服務</div>
+                        <div class="flex items-center"><i class="fas fa-check-circle text-brand-teal mr-2"></i> 7×24 全天候營運</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 解決方案 -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-teal font-bold tracking-[0.3em]">OUR SOLUTIONS</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-dark mt-3 mb-4">全方位供應鏈解決方案</h2>
+                <p class="text-gray-500 max-w-xl mx-auto">六大多元化服務，覆蓋供應鏈全生命週期。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card-hover p-8 bg-brand-light rounded-2xl border border-gray-100 transition-all duration-300 reveal">
+                    <div class="w-14 h-14 bg-teal-100 text-brand-primary rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-boxes-stacked"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">倉儲管理</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        香港及亞洲多個保稅倉庫，配備自動化分揀系統，支援 B2B 與 B2C 多種庫存模式。
+                    </p>
+                    <a href="#contact" class="text-brand-primary text-sm font-semibold hover:underline">了解更多 &rarr;</a>
+                </div>
+
+                <div class="card-hover p-8 bg-brand-light rounded-2xl border border-gray-100 transition-all duration-300 reveal" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-teal-100 text-brand-primary rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">運輸配送</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        陸、海、空、鐵多式聯運，大灣區即日達、跨境專車 48 小時直送，全程 GPS 追蹤。
+                    </p>
+                    <a href="#contact" class="text-brand-primary text-sm font-semibold hover:underline">了解更多 &rarr;</a>
+                </div>
+
+                <div class="card-hover p-8 bg-brand-light rounded-2xl border border-gray-100 transition-all duration-300 reveal" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-teal-100 text-brand-primary rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-cart-flatbed"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">訂單履行</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        接單、揀貨、包裝、出庫一站完成，支援電商平台 API 對接，下單至出庫最快 2 小時。
+                    </p>
+                    <a href="#contact" class="text-brand-primary text-sm font-semibold hover:underline">了解更多 &rarr;</a>
+                </div>
+
+                <div class="card-hover p-8 bg-brand-light rounded-2xl border border-gray-100 transition-all duration-300 reveal">
+                    <div class="w-14 h-14 bg-teal-100 text-brand-primary rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">跨境電商物流</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        覆蓋歐美及東南亞市場，提供海外倉備貨、本地退換貨及逆向物流一站式管理。
+                    </p>
+                    <a href="#contact" class="text-brand-primary text-sm font-semibold hover:underline">了解更多 &rarr;</a>
+                </div>
+
+                <div class="card-hover p-8 bg-brand-light rounded-2xl border border-gray-100 transition-all duration-300 reveal" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-teal-100 text-brand-primary rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">數據分析</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        庫存預測、補貨建議及成本分析報告，以數據支持您的採購與庫存決策。
+                    </p>
+                    <a href="#contact" class="text-brand-primary text-sm font-semibold hover:underline">了解更多 &rarr;</a>
+                </div>
+
+                <div class="card-hover p-8 bg-brand-dark rounded-2xl transition-all duration-300 reveal text-white" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-brand-aqua/20 text-brand-aqua rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">定制方案</h3>
+                    <p class="text-gray-200 text-sm leading-relaxed mb-4">
+                        冷鏈、危險品、高價值貨品等特殊需求，我們的方案顧問為您構建專屬供應鏈體系。
+                    </p>
+                    <a href="#contact" class="text-brand-aqua text-sm font-semibold hover:underline">諮詢顧問 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 智能平台 -->
+    <section id="platform" class="py-20 grid-bg text-white relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-aqua font-bold tracking-[0.3em]">SMART PLATFORM</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold mt-3 mb-4">自主研發智能管理平台</h2>
+                <p class="text-gray-300 max-w-xl mx-auto">一套系統，串連供應鏈上下游所有角色。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-8 bg-white/5 border border-white/10 rounded-2xl text-center reveal">
+                    <div class="w-16 h-16 bg-brand-aqua/15 text-brand-aqua rounded-2xl flex items-center justify-center text-3xl mx-auto mb-5">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-3">WMS 倉儲系統</h4>
+                    <p class="text-gray-200 text-sm">庫存實時可見，揀貨路徑優化，盤點效率提升 40%</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-2xl text-center reveal" style="transition-delay: 100ms;">
+                    <div class="w-16 h-16 bg-brand-aqua/15 text-brand-aqua rounded-2xl flex items-center justify-center text-3xl mx-auto mb-5">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-3">TMS 運輸系統</h4>
+                    <p class="text-gray-200 text-sm">智能排單配載，運力比價，運輸成本平均節省 18%</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-2xl text-center reveal" style="transition-delay: 200ms;">
+                    <div class="w-16 h-16 bg-brand-aqua/15 text-brand-aqua rounded-2xl flex items-center justify-center text-3xl mx-auto mb-5">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-3">實時追蹤</h4>
+                    <p class="text-gray-200 text-sm">IoT 感應器全鏈監控，溫度、濕度、位置一目了然</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-2xl text-center reveal" style="transition-delay: 300ms;">
+                    <div class="w-16 h-16 bg-brand-aqua/15 text-brand-aqua rounded-2xl flex items-center justify-center text-3xl mx-auto mb-5">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-3">異常預警</h4>
+                    <p class="text-gray-200 text-sm">延誤、破損、缺貨即時警報，平均 30 分鐘內處理</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 客戶評價 -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-teal font-bold tracking-[0.3em]">TESTIMONIALS</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-dark mt-3 mb-4">客戶的真心回饋</h2>
+                <p class="text-gray-500 max-w-xl mx-auto">超過 300 家企業客戶的信賴，是我們前進的最大動力。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-brand-light rounded-2xl shadow-lg p-8 reveal">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-aqua rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">陳</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">陳先生</h4>
+                            <p class="text-brand-primary text-sm">跨境電商營運總監</p>
+                        </div>
+                    </div>
+                    <div class="text-amber-400 text-sm mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        導入 WMS 後揀貨效率提升 40%，大促期間零爆倉。實時追蹤功能讓我們向客戶交代更從容。
+                    </p>
+                </div>
+
+                <div class="bg-brand-light rounded-2xl shadow-lg p-8 reveal" style="transition-delay: 100ms;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-aqua rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">M</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Ms. Melissa</h4>
+                            <p class="text-brand-primary text-sm">國際品牌供應鏈經理</p>
+                        </div>
+                    </div>
+                    <div class="text-amber-400 text-sm mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        冷鏈專案交由他們管理後，貨損率由 3% 降至 0.4%。異常預警 30 分鐘內必有回覆，非常可靠。
+                    </p>
+                </div>
+
+                <div class="bg-brand-light rounded-2xl shadow-lg p-8 reveal" style="transition-delay: 200ms;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-aqua rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">李</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">李小姐</h4>
+                            <p class="text-brand-primary text-sm">零售集團物流主管</p>
+                        </div>
+                    </div>
+                    <div class="text-amber-400 text-sm mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        運輸成本節省 18%，每月報表自動生成。對接我們現有 ERP 只花了三星期，比預期快一倍。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 增值服務 -->
+    <section id="value" class="py-20 bg-brand-light">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-teal font-bold tracking-[0.3em]">VALUE-ADDED SERVICES</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-dark mt-3 mb-4">供應鏈增值服務</h2>
+                <p class="text-gray-500 max-w-xl mx-auto">不止於物流，我們更為您的業務創造額外價值。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-white rounded-2xl border border-gray-100 p-6 text-center reveal">
+                    <div class="w-12 h-12 bg-teal-100 text-brand-primary rounded-xl flex items-center justify-center text-xl mx-auto mb-4">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h4 class="font-bold mb-2 text-gray-800">組裝與貼標</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">包裝客製、標籤列印及組合裝配，讓貨品直接上架銷售。</p>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-gray-100 p-6 text-center reveal" style="transition-delay: 100ms;">
+                    <div class="w-12 h-12 bg-teal-100 text-brand-primary rounded-xl flex items-center justify-center text-xl mx-auto mb-4">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h4 class="font-bold mb-2 text-gray-800">品質檢驗</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">入庫全檢與抽檢服務，出貨前品質把關，降低退貨風險。</p>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-gray-100 p-6 text-center reveal" style="transition-delay: 200ms;">
+                    <div class="w-12 h-12 bg-teal-100 text-brand-primary rounded-xl flex items-center justify-center text-xl mx-auto mb-4">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h4 class="font-bold mb-2 text-gray-800">關務與報關</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">代辦進出口報關及單證文件，香港及中國內地口岸經驗豐富。</p>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-gray-100 p-6 text-center reveal" style="transition-delay: 300ms;">
+                    <div class="w-12 h-12 bg-teal-100 text-brand-primary rounded-xl flex items-center justify-center text-xl mx-auto mb-4">
+                        <i class="fas fa-arrows-rotate"></i>
+                    </div>
+                    <h4 class="font-bold mb-2 text-gray-800">退貨管理</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">逆向物流與翻新處理，將退貨損失轉化為再次銷售機會。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 合作夥伴 -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="font-serif text-2xl font-bold text-brand-dark mb-10 reveal">深受行業領先企業信賴</h3>
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-8 items-center reveal">
+                <div class="text-2xl font-serif font-bold text-gray-300 hover:text-brand-primary transition">GLOBEX</div>
+                <div class="text-2xl font-serif font-bold text-gray-300 hover:text-brand-primary transition">NORTHWIND</div>
+                <div class="text-2xl font-serif font-bold text-gray-300 hover:text-brand-primary transition">AQUA&reg;</div>
+                <div class="text-2xl font-serif font-bold text-gray-300 hover:text-brand-primary transition">PACIFIC</div>
+                <div class="text-2xl font-serif font-bold text-gray-300 hover:text-brand-primary transition">MERIDIAN</div>
+                <div class="text-2xl font-serif font-bold text-gray-300 hover:text-brand-primary transition">ORION&reg;</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 bg-brand-light">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="font-serif text-3xl font-bold text-center text-brand-dark mb-12 reveal">常見問題</h2>
+
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-lg shadow-sm reveal">
+                    <h4 class="font-bold text-lg mb-2 text-gray-800"><i class="far fa-question-circle text-brand-teal mr-2"></i> 可以查詢貨物實時位置嗎？</h4>
+                    <p class="text-gray-600">可以。每張訂單均有專屬追蹤編號，客戶可登入系統 jpholdingshk.com 或經電郵 contact@jpholdingshk.com 查詢貨物實時狀態、預計到達時間及溫度紀錄（如適用）。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm reveal">
+                    <h4 class="font-bold text-lg mb-2 text-gray-800"><i class="far fa-question-circle text-brand-teal mr-2"></i> 服務合約設有最低用量嗎？</h4>
+                    <p class="text-gray-600">不設最低用量。我們的計費方式靈活，可按件、按板、按月費任君選擇，適合不同規模的企業從試點開始合作。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm reveal">
+                    <h4 class="font-bold text-lg mb-2 text-gray-800"><i class="far fa-question-circle text-brand-teal mr-2"></i> 系統能與我們現有 ERP 對接嗎？</h4>
+                    <p class="text-gray-600">我們的平台支援標準 API 及 EDI 對接，已與 SAP、Oracle 及多個主流 ERP 系統完成實戰整合，對接周期一般只需 2-4 週。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm reveal">
+                    <h4 class="font-bold text-lg mb-2 text-gray-800"><i class="far fa-question-circle text-brand-teal mr-2"></i> 提供冷鏈或特殊貨品服務嗎？</h4>
+                    <p class="text-gray-600">提供。我們設有恆溫及冷凍倉庫，並具備危險品及高價值貨品專案管理經驗，歡迎致電 78298865 與我們的方案顧問詳談。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-gradient-to-r from-brand-deep to-brand-dark relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 80% 30%, #2dd4bf 2px, transparent 2px); background-size: 28px 28px;"></div>
+        <div class="container mx-auto px-6 text-center relative z-10 text-white">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold mb-6">優化供應鏈，從一次諮詢開始</h2>
+            <p class="text-xl text-gray-100 mb-10">我們將為您的供應鏈進行免費體檢，並提供改善建議報告。</p>
+            <a href="#contact" class="inline-block px-10 py-4 bg-brand-aqua text-brand-deep font-bold rounded-full shadow-xl hover:bg-white transform hover:scale-105 transition duration-300">
+                預約免費體檢
+            </a>
+        </div>
+    </section>
+
+    <!-- 頁腳 -->
+    <footer id="contact" class="bg-brand-deep text-gray-200 pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <h3 class="font-serif text-white text-2xl font-bold mb-6">JP HOLDINGS LIMITED</h3>
+                    <p class="mb-6 text-sm leading-relaxed">
+                        JP HOLDINGS LIMITED 以科技與專業，為您的供應鏈注入確定性與效率。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-aqua hover:text-brand-deep transition"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-aqua hover:text-brand-deep transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-aqua hover:text-brand-deep transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">快速連結</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#home" class="hover:text-brand-aqua transition">首頁</a></li>
+                        <li><a href="#about" class="hover:text-brand-aqua transition">關於我們</a></li>
+                        <li><a href="#services" class="hover:text-brand-aqua transition">解決方案</a></li>
+                        <li><a href="#platform" class="hover:text-brand-aqua transition">智能平台</a></li>
+                        <li><a href="#" class="hover:text-brand-aqua transition">客戶案例</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">聯絡方式</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-brand-aqua"></i>
+                            <span>Rm 931 CAREER AND KENSON INDL MANSION 58 HUNG TO RD</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-brand-aqua"></i>
+                            <a href="mailto:contact@jpholdingshk.com" class="hover:text-white transition">contact@jpholdingshk.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-brand-aqua"></i>
+                            <a href="tel:78298865" class="hover:text-white transition text-lg font-bold">78298865</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-globe mr-3 text-brand-aqua"></i>
+                            <span>jpholdingshk.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">索取報價</h4>
+                    <form onsubmit="event.preventDefault(); alert('感謝您的查詢，供應鏈顧問會盡快與您聯絡！');" class="space-y-3">
+                        <input type="text" placeholder="公司名稱" class="w-full bg-white/5 border border-white/10 rounded py-3 px-4 text-white focus:ring-2 focus:ring-brand-aqua outline-none text-sm">
+                        <input type="text" placeholder="聯絡電話" class="w-full bg-white/5 border border-white/10 rounded py-3 px-4 text-white focus:ring-2 focus:ring-brand-aqua outline-none text-sm">
+                        <textarea placeholder="您的需求描述" rows="3" class="w-full bg-white/5 border border-white/10 rounded py-3 px-4 text-white focus:ring-2 focus:ring-brand-aqua outline-none text-sm"></textarea>
+                        <button type="submit" class="w-full bg-brand-aqua text-brand-deep font-bold py-3 rounded hover:bg-white transition">提交查詢</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p>&copy; 2026 JP HOLDINGS LIMITED 版權所有</p>
+                <div class="mt-4 md:mt-0 space-x-6">
+                    <a href="#" class="hover:text-brand-aqua">私隱政策</a>
+                    <a href="#" class="hover:text-brand-aqua">服務條款</a>
+                    <a href="#" class="hover:text-brand-aqua">系統狀態</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#home" id="backToTop" class="fixed bottom-8 right-8 bg-brand-aqua text-brand-deep w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform translate-y-20 transition-all duration-300 z-40 hover:bg-white">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-nav', 'py-2');
+                navbar.classList.remove('py-5');
+                backToTop.classList.remove('translate-y-20');
+            } else {
+                navbar.classList.remove('glass-nav', 'py-2');
+                navbar.classList.add('py-5');
+                backToTop.classList.add('translate-y-20');
+            }
+        });
+
+        const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    if (entry.target.querySelector('.counter') && !entry.target.dataset.counted) {
+                        startCounters(entry.target);
+                        entry.target.dataset.counted = true;
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        function startCounters(section) {
+            const counters = section.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.innerText = Math.ceil(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCounter();
+            });
+        }
+
+        document.querySelector('.fa-bars')?.parentElement?.addEventListener('click', () => {
+            alert('移動端菜單點擊 (此處可擴展側邊欄邏輯)');
+        });
+    </script>
+</body>
+</html>
